@@ -21,8 +21,9 @@ const Keyv = require("keyv");
 // One of the following
 const keyv = new Keyv();
 
-// Handle DB connection errors
-
+app.get("/", (req, res) => {
+  res.status(200).send("Deployed");
+});
 // Sets server port and logs message on success
 app.listen(process.env.PORT || 1337, () => {
   console.log("webhook is listening");
