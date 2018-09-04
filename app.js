@@ -31,18 +31,17 @@ app.listen(process.env.PORT || 1337, () => {
 
 // Accepts POST requests at /webhook endpoint
 app.post("/webhook", (req, res) => {
- 
+  console.log("here")
   let body = req.body;
   // keyv.on("error", err => console.log("Connection Error", err));
 
-//   (async () => {
-//     await keyv.set('foo', 'expires in 1 second', 1000); // true
-//     await keyv.set('foo', 'never expires'); // true
-//     await keyv.get('foo').then((test) => console.log(test));// 'never expires'
-//     await keyv.delete('foo'); // true
-//     await keyv.clear(); // undefined})();
-// })()
-
+  //   (async () => {
+  //     await keyv.set('foo', 'expires in 1 second', 1000); // true
+  //     await keyv.set('foo', 'never expires'); // true
+  //     await keyv.get('foo').then((test) => console.log(test));// 'never expires'
+  //     await keyv.delete('foo'); // true
+  //     await keyv.clear(); // undefined})();
+  // })()
 
   // Check the webhook event is from a Page subscription
   if (body.object === "page") {
