@@ -337,7 +337,7 @@ function handlePostback(sender_psid, received_postback) {
     response = { text: "Oops, try sending another image." };
   } else if (payload === "PAYBILL_PAYLOAD") {
     response = { text: "you are not signed in you need to sign in" };
-  } else if (payload == "BOOTBOT_GET_STARTED") {
+  } else if (payload == "Welcome to our bank") {
     response = {
       text: "Welcome sir we are checking if you have an account with us"
     };
@@ -349,6 +349,8 @@ function handlePostback(sender_psid, received_postback) {
 
 // Sends response messages via the Send API
 function callSendAPI(sender_psid, response) {
+  console.log("callSendAPI");
+
   // Construct the message body
   let request_body = {
     recipient: {
@@ -356,6 +358,7 @@ function callSendAPI(sender_psid, response) {
     },
     message: response
   };
+  console.log("request_body" + request_body)
   // Send the HTTP request to the Messenger Platform
   request(
     {
